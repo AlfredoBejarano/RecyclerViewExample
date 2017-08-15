@@ -1,0 +1,49 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion "26.0.0"
+    defaultConfig {
+        applicationId "com.alfredobejarano.recyclerviewexample"
+        minSdkVersion 14
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+
+    // Espresso - Instrumentation tests made easy.
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+
+    // ButterKnife - A widget referencing library without Reflection code.
+    compile 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+
+    // RecyclerView - A List view that handles memory usage by its own.
+    compile 'com.android.support:recyclerview-v7:26.0.0-alpha1'
+
+    // ConstraintLayout - A layout that allows better creation of responsive layouts.
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+
+    // Fresco - A powerful system to display images on Android widgets. With Love from Facebook.
+    compile 'com.facebook.fresco:fresco:1.5.0'
+
+    // Android Support - A library that unites old and new Android versions.
+    compile 'com.android.support:appcompat-v7:26.0.0-alpha1'
+
+    // JUnit - A test framework.
+    testCompile 'junit:junit:4.12'
+
+}
